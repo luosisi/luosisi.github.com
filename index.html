@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html style="/*overflow: hidden;*/ height: 100%;"><head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=2.0, user-scalable=yes">
+    <meta http-equiv="Content-Script-Type" content="text/css">
+    <meta http-equiv="Content-Script-Type" content="text/javascript">
+
+
+
+   <!-- <link rel="stylesheet" type="text/css" href="css/vlink/artDialog.css">-->
+<!--    <link rel="shortcut icon" href="/image/vlink/vlink.ico">-->
+<!--<link rel="stylesheet" type="text/css" href="css/ui.css">-->
+<!--    <link rel="stylesheet" type="text/css" href="/css/vlink/style.css">-->
+
+    <!-- html5.js for IE less than 9 -->
+    <!--[if lt IE 9]>
+<!--    <script src="../../js/vlink/html5.js"></script>-->
+
+    <![endif]-->
+    <script type="text/javascript" src="js/vlink/jQuery19.js"></script>
+   <!-- <script type="text/javascript" src="js/vlink/artDialog.js"></script>-->
+   <!-- <script type="text/javascript" src="js/jquery.cookie.js"></script>-->
+   <!-- <script type="text/javascript" src="js/vlink/login_vlink.js"></script>
+    <script type="text/javascript" src="js/vlink/vlink.js"></script>-->
+    <!--<script type="text/javascript" src="js/My97DataPicker/WdatePicker.js"></script>
+    <link href="js/My97DataPicker/skin/WdatePicker.css" rel="stylesheet" type="text/css">-->
+
+    <!-- 工具包 -->
+   <!-- <script type="text/javascript" src="js/tools.js"></script>-->
+
+    <!-- 表单验证 -->
+   <!-- <script type="text/javascript" src="js/validator.js"></script>
+    <script type="text/javascript" src="js/page.js"></script>-->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/index.css">
+
+    <script src="js/bootstrap.min.js"></script>
+    <script type="text/javascript">var contextPath='';</script>
+    <script type="text/javascript">var hostName=document.location.origin;</script>
+
+
+    <title>环球酷跑 为您加速</title>
+    <meta name="keywords" content="vLink|vLink">
+    <meta http-equiv="description" content="vlink|vLink">
+    <!--<script type="text/javascript" src="js/vlink/jquery.fullPage.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/jquery.fullPage.css">-->
+   <!-- <script type="text/javascript">
+        $(function (){
+            $('#wrapper').fullpage({
+                'navigation': true,
+                anchors: ['page1', 'page2', 'page3', 'page4']
+            });
+        })
+    </script>-->
+</head>
+<body>
+<div id="wrapper">
+    <div class="section header" id="header">
+        <nav class="navbar index-mynav ">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle mybtn collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand index-hqtext" href="#">
+                        <div class="index-logo">
+                            <img src="images/hqlogo.png" class="" alt="环球酷跑">
+                        </div>环球酷跑
+
+                    </a>
+                </div>
+                <div id="navbar" class="navbar-collapse collapse">
+                   <!-- <ul class="nav navbar-nav navbar-right" id="fp-use">
+                        <li><a href="../navbar/" class="index-user">用户登录</a></li>
+                        <li><a href="../navbar-static-top/" class="index-regist">用户注册</a></li>
+                    </ul>-->
+                    <ul class="nav navbar-nav navbar-right" id="fq-mynav">
+                        <li><a href="#jieshao"  class="index-mynavli">产品服务</a></li>
+                     <!--   <li><a href="index.html#page3"  class="index-mynavli">套餐订购</a></li>-->
+                        <li><a href="#trydown"  class="index-mynavli">试用下载</a></li>
+                        <li><a href="index.html#page3"  class="index-mynavli">注册购买</a></li>
+                        <li><a href="index.html#page4"  class="index-mynavli">应用场景</a></li>
+                    </ul>
+
+                </div><!--/.nav-collapse -->
+            </div>
+        </nav>
+        <div class="container-fluid my_topimg">
+            <div class="row">
+
+                <div class="col-sm-12 top_bg">
+                    <img src="images/hometop2.jpg" id="topimg" class="img-responsive" alt="视频会议">
+                    <div class="top-imgtext hidden-xs">
+                        <p class="text-center top_text">高效工作，从<span>海雅塔</span>开始</p>
+                        <p class="text-center top_text2">随时随地，轻松舒适，畅快沟通，让工作更专注</p>
+                        <span class="index-try">用用看</span>
+                    </div>
+                </div>
+
+
+
+            </div>
+        </div>
+        <div class="container">
+            <div class="row shengdiv">
+                <div class="col-sm-4 myshengdiv">
+                    <span class="shengicon sheng"></span>
+                    <div class="shengtext myshengtext">
+                        <span>省</span>
+                        <span><i class="dblock-xs">节省时间，</i>省去出差搭车疲劳和交通经费</span>
+                    </div>
+                </div>
+                <div class="col-sm-4 sududiv">
+                    <span class="shengicon sudu"></span>
+                    <div class="shengtext sudutext">
+                        <span>速度</span>
+                        <span>只要有网，随时随地，想见就见</span>
+                    </div>
+                </div>
+                <div class="col-sm-4 gaoqingdiv">
+                    <span class="shengicon gaoqing"></span>
+                    <div class="shengtext gaoqingtext">
+                        <span>高清</span>
+                        <span>画面清晰，见面零距离</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="section">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 index-article"><article><a name="jieshao">公司简介</a></article></div>
+                <div class="col-sm-8 lineHeight letterspacing">
+                    上海雅尔塔系统有限公司是提供第三代协作办公和高效沟通服务的服务提供商。
+                    本公司是以公众互联网为传送基础，以1080P高清视频、AAC-LD高品质语音和PPT等文件共享为体验、以云形式获得的服务。基于互联网而不是传统的专用传输线路，极大降低了使用成本，哪里有互联网，哪里就可以获得雅尔塔服务。
+                    <p>雅尔塔充分利用近年来互联网带宽的极大提升和普及的发展成果，为客户提供看得更清更大、听得更清更悦耳、更加稳定的体验，</p>
+                    <p>雅尔塔可以在iPhone、iPad、windows PC、Mac、安卓手机等设备上使用，也可以购买专业的会议设备，获得身临其境的体验。</p>
+                    <p>第一代协同工作系统以语音为主的电话会议；第二代系统是以文件共享为主、视频为辅的网络会议，如思科的Webex、Citrix的Go to Meeting等等。第三代系统在语音、文件共享的基础上，增加了高清视频，同时提升语音的品质。</p>
+
+
+                </div>
+                <div class="col-sm-4">
+                   <!-- <ul class="index-ul">
+                        <li><span class="index-use"></span> 为旅游、摄影、多媒体创作等爱好者</li>
+                        <li><span class="index-use"></span> 为高清视频协作、远程办公、视频通信等使用者</li>
+                        <li><span class="index-use"></span>为游戏、网络冲浪、视频点播等爱好者</li>
+                        <li><span class="index-use"></span>提供智能网络加速，全面提升您的网络速度和使用效率，令您全球冲浪更加酣畅淋漓、精彩无限</li>
+                    </ul>-->
+                </div>
+                <div class="col-sm-6 text-center tiyanmrg"><img class="img-responsive" src="images/hezuo2.jpg"></div>
+                <div class="col-sm-6">
+                    <div class="col-sm-12 index-article mrgleft-xs tiyanmrg"><article><a name="fuwu">主要服务</a></article></div>
+                    <div class="col-sm-12 lineHeight">
+                        公司服务主旨在于帮助企业生产方式的创新，为企业帮助企业减少出差和车旅费用、提高工作效率、提升客户满意度、提高员工幸福感、提升公司形象。主要服务于如下场景：
+                        <p>1、有较紧密的异地沟通协作需求的，比如公分支机构之间、产业上下游之间、商家和客户之间等等。</p>
+                        <p>2、有较强的面对面沟通和展示需求的，比如设计、面试、远程医疗、创意沟通、字画、工艺品、金融、法律、教育、培训、样品展示和推广等等服务和销售场景。</p>
+                        <p>3、有人文思维，以人为本，提高员工凝聚力、自豪感、幸福感的后现代公司。</p>
+                    </div>
+                </div>
+<!--
+                <div class="col-sm-6">
+                    <div class="col-sm-12 index-article mrgleft-xs"><article>业务模式</article></div>
+                    <div class="col-sm-12 header">
+                        <p>时长计费、流量计费、特定事件计费。</p>
+                        <p>面向个人和公司。</p>
+                    </div>
+                </div>
+                <div class="col-sm-6 text-center"><img class="img-responsive" src=""></div>-->
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 index-foru index-article"><article>公司产品</article></div>
+            <div class="col-sm-2 col-xs-4 text-center">
+                        <span class="index-icon">
+                            <i class="myicon myicon1"></i>
+                        </span>
+                <span class="icon-text">终端注册</span>
+            </div>
+            <div class="col-sm-2 col-xs-4 text-center">
+                        <span class="index-icon">
+                            <i class="myicon myicon2"></i>
+                        </span>
+                <span class="icon-text">号码查询</span>
+            </div>
+            <div class="col-sm-2 col-xs-4 text-center">
+                        <span class="index-icon">
+                            <i class="myicon myicon3"></i>
+                        </span>
+                <span class="icon-text">通讯录</span>
+            </div>
+            <div class="col-sm-2 col-xs-4 text-center">
+                        <span class="index-icon">
+                            <i class="myicon myicon4"></i>
+                        </span>
+                <span class="icon-text">视频转发</span>
+            </div>
+            <div class="col-sm-2 col-xs-4 text-center">
+                        <span class="index-icon">
+                            <i class="myicon myicon5"></i>
+                        </span>
+                <span class="icon-text">录音</span>
+            </div>
+            <div class="col-sm-2 col-xs-4 text-center">
+                        <span class="index-icon">
+                            <i class="myicon myicon6"></i>
+                        </span>
+                <span class="icon-text">呼叫服务</span>
+            </div>
+        </div>
+    </div>
+    <div class="section account">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 index-article"><article>可选终端</article></div>
+                <div class="col-sm-4 lineHeight">
+                    <div class="col-sm-offset-3 col-sm-6 text-center zhanghu-one">
+                        <img class="img-responsive zhangh-myimg" src="images/onest.jpg"/>
+                    </div>
+
+                    <p class="text-center clearfix zhangh-text">个人软终端</p>
+                    <div class="col-sm-12  zhangh-divtext ">
+                        为家庭和个人而设计，同一账号最多可以在5个终端上同时使用，统一计费和扣费。登录Portal 帐号与客户端拨号上网相同。个人帐号免月租，无法增加子帐号。个人帐号欠费超过30元，帐号锁定。1年内，充值后自动恢复。锁定1年后，帐号删除。
+                    </div>
+                </div>
+                <div class="col-sm-4 lineHeight">
+                    <div class="col-sm-offset-3 col-sm-6 text-center zhanghu-one">
+                        <img class="img-responsive zhangh-myimg" src="images/somest.jpg"/>
+                    </div>
+                    <p class="text-center clearfix zhangh-text">桌面专业终端</p>
+                    <div class="col-sm-12 lineHeight zhangh-divtext">
+                        为中小型企业而设计，可以增加子帐号。企业帐号只用于登录Portal操作，子帐号只用于客户端拨号上网。同一子帐号可以在3个终端上试用。所有子帐号的消费从企业帐号中扣费。企业帐号月租30元/月，包括10个免费子帐号。企业帐号欠费超过100元，子帐号全部锁定。1年内充值后自动恢复。锁定1年后，帐号删除。
+                    </div>
+                </div>
+                <div class="col-sm-4 lineHeight">
+                    <div class="col-sm-offset-3 col-sm-6 col-xs-12 text-center zhanghu-one">
+                        <img class="img-responsive zhangh-myimg" src="images/manyst.jpg"/>
+                    </div>
+                    <p class="text-center clearfix zhangh-text">中型会议室终端</p>
+                    <div class="col-sm-12 lineHeight zhangh-divtext">
+                        为新客户了解和体验全球酷跑业务而设计，最多可以在2个终端上试用，试用帐号有效期为3个月，累计免费试用时间为2小时。2小时用完后，拨号上网功能锁定，可以登录Portal。购买套餐后，帐号可以转成个人帐号或者企业帐号。
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="section package">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 index-article"><article>套餐订购</article></div>
+                <!--<div class="col-sm-4 ">
+
+                    <div class="col-sm-12 taocan-top">
+                     <div class=" col-xs-7">
+                         <i class="taocan-time"></i>
+                         时常套餐包
+                     </div>
+                     <div class="text-right pull-right col-xs-5">
+                         <i class="index-add"></i>
+                         订购
+                     </div>
+                 </div>
+                 <div class="col-sm-12 taocan-center hidden-xs">
+                    <div class="col-xs-5  text-center"><span class="taocan-redspan">1<i class="taocan-itime">小时</i></span><strong>3</strong>元</div>
+                     <div class="col-xs-7 text-center"><span class="taocan-redspan">1000<i class="taocan-itime">小时</i></span><strong>1000</strong>元</div>
+                 </div>
+                    <div class="col-sm-12 lineHeight taocan-bottom">
+                        按照小时销售，1年内有效，从第一次使用开始计算起始时间。过期无效，时长清零。峰值带宽不大于2Mbps。<br>
+                        <strong class="fontred">购买越多，单价越优惠</strong>。1小时起卖，价格3元，最多一次购买1000小时，1000元。中间价格线性递减。
+                    </div>
+
+                </div>
+                <div class="col-sm-4">
+
+                    <div class="col-sm-12 taocan-top">
+                        <div class=" col-xs-7">
+                            <i class="taocan-time"></i>
+                            时常套餐包
+                        </div>
+                        <div class="text-right pull-right col-xs-5">
+                            <i class="index-add"></i>
+                            订购
+                        </div>
+                    </div>
+                    <div class="col-sm-12 taocan-center hidden-xs">
+                        <div class="col-xs-5  text-center"><span class="taocan-redspan">1<i class="taocan-itime">小时</i></span><strong>3</strong>元</div>
+                        <div class="col-xs-7 text-center"><span class="taocan-redspan">1000<i class="taocan-itime">小时</i></span><strong>1000</strong>元</div>
+                    </div>
+                    <div class="col-sm-12 lineHeight taocan-bottom">
+                        按照小时销售，1年内有效，从第一次使用开始计算起始时间。过期无效，时长清零。峰值带宽不大于2Mbps。<br>
+                        <strong class="fontred">购买越多，单价越优惠</strong>。1小时起卖，价格3元，最多一次购买1000小时，1000元。中间价格线性递减。
+                    </div>
+
+                </div>
+                <div class="col-sm-4 ">
+
+                    <div class="col-sm-12 taocan-top">
+                        <div class=" col-xs-7">
+                            <i class="taocan-time"></i>
+                            时常套餐包
+                        </div>
+                        <div class="text-right pull-right col-xs-5">
+                            <i class="index-add"></i>
+                            订购
+                        </div>
+                    </div>
+                    <div class="col-sm-12 taocan-center hidden-xs">
+                        <div class="col-xs-5  text-center"><span class="taocan-redspan">1<i class="taocan-itime">小时</i></span><strong>3</strong>元</div>
+                        <div class="col-xs-7 text-center"><span class="taocan-redspan">1000<i class="taocan-itime">小时</i></span><strong>1000</strong>元</div>
+                    </div>
+                    <div class="col-sm-12 lineHeight taocan-bottom">
+                        按照小时销售，1年内有效，从第一次使用开始计算起始时间。过期无效，时长清零。峰值带宽不大于2Mbps。<br>
+                        <strong class="fontred">购买越多，单价越优惠</strong>。1小时起卖，价格3元，最多一次购买1000小时，1000元。中间价格线性递减。
+                    </div>
+                    </div>-->
+               <!-- <div class="col-sm-4">
+                    <table class="table table-bordered">
+                       <thead>
+                            <th colspan="2">企业宝套餐1</th>
+                       </thead>
+                        <tbody>
+                        <tr>
+                            <td>价格 元/年</td><td>29800</td>
+                        </tr>
+                        <tr>
+                            <td>账号数量</td><td>10</td>
+                        </tr>
+                        <tr>
+                            <td>软终端数量</td><td>20</td>
+                        </tr>
+                        <tr>
+                            <td>DX/MX软终端数量</td><td>10</td>
+                        </tr>
+                        <tr>
+                            <td>点对点视频电话</td><td>全包</td>
+                        </tr>
+                        <tr>
+                            <td>多方高清视频会议</td><td>全包</td>
+                        </tr>
+                        <tr>
+                            <td>录音录像</td><td>3 元/分钟</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="col-sm-4">
+                    <table class="table table-bordered">
+                        <thead>
+                        <th colspan="4">企业宝套餐1</th>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>价格 元/年</td><td>29800</td> <td>账号数量</td><td>10</td>
+                        </tr>
+                        <tr>
+                            <td>软终端数量</td><td>20</td> <td>DX/MX软终端数量</td><td>10</td>
+                        </tr>
+                        <tr>
+                            <td>点对点视频电话</td><td>全包</td> <td>多方高清视频会议</td><td>全包</td>
+                        </tr>
+                        <tr>
+                            <td>录音录像</td><td colspan="3">3 元/分钟</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="col-sm-4">
+                    <table class="table table-bordered">
+                        <thead>
+                         <td>套餐</td><td>价格 元/年</td><td>账号数量</td><td>软终端数量</td><td>DX/MX软终端数量</td> <td>点对点视频电话</td><td>多方高清视频会议</td> <td>录音录像</td>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>企业宝套餐1</td>
+                            <td>29800</td>
+                            <td>10</td>
+                            <td>20</td>
+                            <td>10</td>
+
+                           <td>全包</td>
+
+                            <td>全包</td>
+
+                           <td>3 元/分钟</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>-->
+                <div class="col-sm-12">
+                    <table class="table table-hover table-bordered">
+                        <thead>
+                        <td>套餐</td><td>价格 元/年</td><td>账号数量</td><td>软终端数量</td><td>DX/MX软终端数量</td> <td>点对点视频电话</td><td>多方高清视频会议</td> <td>录音录像</td>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>企业宝套餐1</td>
+                            <td>29800</td>
+                            <td>10</td>
+                            <td>20</td>
+                            <td>10</td>
+
+                            <td>全包</td>
+
+                            <td>全包</td>
+
+                            <td>3 元/分钟</td>
+                        </tr>
+                        <tr>
+                            <td>企业宝套餐1</td>
+                            <td>29800</td>
+                            <td>10</td>
+                            <td>20</td>
+                            <td>10</td>
+
+                            <td>全包</td>
+
+                            <td>全包</td>
+
+                            <td>3 元/分钟</td>
+                        </tr>
+                        <tr>
+                            <td>企业宝套餐1</td>
+                            <td>29800</td>
+                            <td>10</td>
+                            <td>20</td>
+                            <td>10</td>
+
+                            <td>全包</td>
+
+                            <td>全包</td>
+
+                            <td>3 元/分钟</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+
+                <div class="col-sm-12 index-article"><article><a name="trydown">试用下载</a> </article></div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-12 text-center jiemian-show">
+                    海雅塔视频app试用界面展示
+                </div>
+                    <div class="col-sm-2 col-sm-offset-2">
+                        <img src="images/try1.png" class="img-responsive" alt="试用下载">
+                    </div>
+                    <div class="col-sm-2 try-showmrg">
+                        <img src="images/try2.png" class="img-responsive" alt="试用下载">
+                    </div>
+                    <div class="col-sm-2">
+                        <img src="images/try3.png" class="img-responsive" alt="试用下载">
+                    </div>
+                    <div class="col-sm-2 try-showmrg">
+                        <img src="images/try4.png" class="img-responsive" alt="试用下载">
+                    </div>
+            </div>
+
+            <div class="row try-down">
+                         <div class=" col-sm-2 col-sm-offset-1 mian-logo text-center">
+                             <img src="images/download.png" class="img-responsive download" alt="环球酷跑">
+                         </div>
+                    <div class="col-sm-7 text-center try-tishi">
+                        <div class="col-sm-10">
+                            <p class="dinlinebk mian-zhangh">海雅塔为您提供5个免费账号体验</p>
+                            <p class="dinlinebk">提供VIP01、VIP02、VIP03、VIP04、VIP05共5个体验账号，密码为12345，可以登录windows、iPhone、iPad、安卓手机、安卓Pad终端。所有软终端的使用界面基本一致。
+                            </p>
+                        </div>
+                        <div class="col-sm-2 text-center">
+                            <span class="span-mianbg">
+                                 <span class="span-mian">免</span>
+                            </span>
+
+                        </div>
+                    </div>
+
+                <div class="col-sm-6 col-xs-offset-3 down-mrgbottom">
+                    <div class="col-sm-5 col-sm-offset-1">
+                        <span class="dblock down-android"><i class="my-down">安卓下载</i></span>
+                        <span class="dblock down-apple"><i class="my-down">iphone下载</i></span>
+                    </div>
+                    <div class="col-sm-6 erweima">
+                        <img src="images/erweima.jpg" class="img-responsive">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <footer>
+            <div class="container-fluid my-footer">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-5 hidden-xs">
+                            <div class="col-sm-3"><img class="img-responsive" src="images/hqlogo.png" alt="" title="环球同桌"/>
+                               </div><span class="hq_bottom">环球酷跑</span> <i class="icon-ceshi">测试</i>
+                            <p class="logo-bottomp clearfix">010-65694176-800</p>
+                            <p class="logo-bottomp">京ICP备 13014107 号</p>
+                        </div>
+                        <div class="col-sm-7 index-mytext">
+                            <nav class="footNav">
+                                <a href="/jsp/vlink/index.jsp#page2">业务介绍</a>
+                                <a href="/jsp/vlink/index.jsp#page3">帐号分类</a>
+                                <a href="/jsp/vlink/index.jsp#page4">套餐订购</a>
+                                <a href="http://www.kupao.in/jsp/introduce/index.html" target="_blank">注册购买</a>
+                                <a href="http://www.kupao.in/jsp/faq/index.html" target="_blank">应用场景</a>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+</div>
+<aside id="onService">
+    <div class="contact">
+        <span class="contact-tishi">在线客服</span>
+        <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&amp;uin=2947522348&amp;site=qq&amp;menu=yes" ><span class="contact-QQ"></span></a>
+        <span class="contact-back"></span>
+    </div>
+
+</aside>
+<!--<article id="advertisement">
+    <a href="http://www.kupao.in/jsp/vlink/register.jsp" class="registed">免费注册</a>
+    <a href="#" class="close"></a>
+</article>-->
+<script type="text/javascript" src="js/index.js"></script>
+</body>
+</html>
