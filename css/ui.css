@@ -1,0 +1,319 @@
+@charset "utf-8";
+/* base */
+html{color:#000; font:100 13.9167px/1.5em "Helvetica Neue","Hiragino Sans GB","Microsoft YaHei","\9ED1\4F53",Arial,sans-serif;height:100%; }
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td,figure{margin:0;padding:0}
+table{border-collapse:collapse;border-spacing:0}
+fieldset,img{border:0}
+address,caption,cite,code,dfn,em,strong,th,var{font-style:normal;font-weight:normal}
+ol,ul{list-style:none}
+caption,th{text-align:left}
+h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal}
+q:before,q:after{content:''}
+abbr,acronym{border:0;font-variant:normal}
+sup{vertical-align:text-top}
+sub{vertical-align:text-bottom}
+*+html input,*+html textarea,*+html select{font-family:inherit;font-size:inherit;font-weight:inherit}
+* html input,* html textarea,* html select{font-size:100%}
+legend{color:#000}
+a:focus , input[type="button"][type="summit"]:focus {outline:thin dotted;}
+.noword{ line-height:999em;}
+/* common */
+/* 背景颜色 */
+body{clear: both;text-align: center;overflow:visible; background:#fff;  overflow:auto}
+div#wrapper{ position:relative; z-index:5;width:100%;text-align:left;overflow:visible }
+#header{position:relative; z-index:50;clear:both; width:100%;background:#042b41;}
+#banner{ position:relative; left:0px;width:80em; height:47.8em; margin:2em auto 0 auto; background:url(../../images/top_bg1.jpg) no-repeat}
+div#bodyer{position:relative; z-index:10;background:#fff;}
+footer{clear:both;width:100%;}
+div.inc{ position:relative;clear:both; width:68.5em; margin:0 auto;}
+
+.header #logo{ position:relative;width:6em; height:1.2em; margin:0 0 0 0.3em; color:#b2d5e7;font-weight:bolder; font-size:2.4em }
+.header #logo i{ display:block; position:absolute; top:-1em; right:-3em; padding:0.1em 0.5em; font-style:normal; border-radius:1em; color:#000; background:#94d900;font-size:0.3em; line-height:1.6em; letter-spacing:0.08em; font-weight:900}
+.header #logo a{ text-decoration:none;color:#b2d5e7;}
+.header #logo span{ display:inline-block; width:1.67em; height:0.9em; margin:0 0.3em 0 0; overflow:hidden; background:url(../../image/vlink/coolRunIcon.png) no-repeat}
+.header nav.navigation { position:absolute; left:24.643em; top:0;width:41.5em; height:2.4em;line-height:2.4em; text-align:right;}
+.header nav a{ display:inline-block; margin:0 0 0 -0.5em;font-size:1.05em; color:#b2d5e7; padding:0 0.4em;  line-height:2.3em; text-decoration:none; letter-spacing:0.15em}
+.header nav a:hover{background:#063f60}
+.header nav.mobileNav{ display:none;position:absolute;right:11.8em; top:0.1em;width:2em; height:2em; overflow:hidden; }
+.header nav.mobileNav a{ display:block;width:2em; height:2em; background:url(../../image/vlink/icon.png) -110px -506px no-repeat}
+.header nav.mobileNav a:hover,
+.header nav.mobileNav a:active{  background:url(../../image/vlink/icon.png) -140px -506px no-repeat}
+.header .login{ position:absolute; right:0; top:0;width:14em; height:2.5em;line-height:2.4em; text-align:right}
+.header .login a{ display:inline-block; width:6em; height:2.4em; text-align:center; margin:0 0.3em 0 0 }
+.header .login a#loginBtn{ border:0.1em solid #409438; color:#72c06a; text-decoration:none; }
+.header .login a#registBtn{ border:0.1em solid #409438; background:#409438;color:#409438; color:#fff; text-decoration:none}
+.header .login a#registBtn:hover,
+.header .login a#loginBtn:hover{background:#063f60; border:1px solid #063f60; color:#fff;}
+.header .login.default #logined{display:none}
+.header .login.default .unlogin{ display:inline-block}
+.header .login .unlogin{ display:none}
+.header .login #logined{ border:0.1em solid #409438; padding:0 0.5em; background:#409438;color:#409438; color:#fff; text-decoration:none}
+
+/* login */
+aside#loginArea{ display:none;position:absolute;z-index:30;right:1em; top:3em;width:22em; height:auto; padding:0 0 1em 0; background:#FFF; box-shadow:1px 5px 1px rgba(0,0,0,0.3);}
+aside#loginArea h2{ position:relative;height:2.8em; line-height:2.8em; padding:0 0.8em; font-size:1.2em}
+aside#loginArea h2 #closeLogin{ display:block; position:absolute; top:0.4em; right:0.3em; width:1.56em; height:1.56em; background:url(../../image/vlink/loginIcon.png)  -1.8em -2.17em; text-indent:-999em; overflow:hidden }
+aside#loginArea label{ display:block;width:17em; height:2.71em; margin:0 0 0.7em 1em; padding:0 0 0 3em; background-color:#eee; background-image:url(../../image/vlink/loginIcon.png); background-repeat:no-repeat }
+aside#loginArea label input{ width:17em;border:0; height:2.3em; margin:0.21em 0 0 0;background-color:#eee;}
+aside#loginArea label.userName{ background-position: 10px 10px }
+aside#loginArea label.userPw{ background-position: 10px -32px }
+aside#loginArea .errorMsg{ display:none;padding:0.5em 1.3em 0 1.3em}
+aside#loginArea.error .errorMsg{ display:block; color:#F00; font-weight:100; font-size:1em}
+aside#loginArea .checkNumber{ padding:0 1.3em}
+aside#loginArea .checkNumber span{ position:relative;display:inline-block; width:5.8em;height:2.1em;background:url(../../image/vlink/loginIcon.png) no-repeat 7.4em -4.6em ; padding:0 3em 0 0 }
+aside#loginArea .checkNumber span img{ position:absolute; top:0.4em;}
+aside#loginArea .checkNumber input{width:7em;border:0; height:2.3em; margin:0 0 0 0.5em ;background-color:#eee;}
+aside#loginArea .btnInc{margin:1em 1.3em 0 1.3em; border-top:0.1em solid #ddd; text-align:center;}
+aside#loginArea .btnInc strong{ display:block; margin:1em 1em 0.5em 0; text-align:right;}
+aside#loginArea .btnInc strong a{ color:#333}
+aside#loginArea .btnInc button{ width:18em; height:2.8em; background:#fa8009; cursor:pointer; border:0.1em solid #844c16; color:#FFF; letter-spacing:0.5em;font:100 14px/1.5em "PingHei","Lucida Grande", "Lucida Sans Unicode", "STHeiti", "Helvetica","Arial","Verdana","sans-serif","Microsoft YaHei","MicrosoftJhengHei","STHeiti";}
+aside#loginArea .btnInc button:hover{ background:#d5771b;}
+
+.feature dl{width:36.5em}
+.feature dl dt{ color:#446295; font-size:1.71em; margin:0 0 0.9em 0; padding:0}
+.feature dl dd{ line-height:1.71em;color:#000;  font-size:1.1em}
+
+.feature aside,
+.feature figure{width:28em}
+.feature aside p{ position:relative; color:#000;}
+.feature aside span{ display:inline-block; width:42px; height:48px; vertical-align:middle; background-image:url(../../image/vlink/icon.png)}
+.feature aside .photo .icon{background-position:-19px -148px;}
+.feature aside .remote{ margin:-8px  0 0 24px}
+.feature aside .remote .icon{background-position:-74px -148px;}
+.feature aside .movie{ margin:-11px  0 0 0}
+.feature aside .movie .icon{background-position:-74px -206px;}
+.feature aside .speed{  margin:-8px  0 0 24px}
+.feature aside .speed .icon{background-position:-19px -206px;}
+.feature aside .speed strong{ position:absolute; top:10px; left:50px; font-weight:100}
+
+article{ margin:2em 0 5.71em 0}
+
+article{ position:relative;height:12em;}
+article.first aside{ position:absolute; right:0; top:1em;}
+
+article.first{height:16em;}
+
+article.second{ height:8em}
+article.second figure{ position:absolute; left:5.71em;width:21.42em; height:7.14em; background-image:url(../../image/vlink/icon.png); background-position:0 -0.1em}
+article.second dl{position:absolute; right:0; top:0;}
+
+article.third figure{ position:absolute;right:26em; top:-1em;width:9.28em; height:10.85em; background:url(../../image/vlink/icon.png) -149px -171px no-repeat }
+
+.account{ background:#e4f0f7}
+.account h3{color:#446295; font-size:1.71em; margin:0 0 0.9em 0; padding:0}
+.account ul { white-space:nowrap}
+.account li{ display:inline-block; white-space:normal; margin:0 4em 0 0; width:19em; line-height:1.71em;letter-spacing:0.1em; vertical-align:top}
+.account li p{ font-size:1.3em; letter-spacing:0.1em; line-height:1.8em}
+.account figure{ text-align:center; margin:0 0 2em 0;}
+.account figcaption{ font-size:1.5em; text-align:center}
+.account figure span{ display:inline-block; width:7.86em; height:9.28em;margin:1.8em 0;background-image:url(../../image/vlink/icon.png)}
+.account li.person figure span{background-position:-17px -347px; }
+.account li.company figure span{background-position:-141px -347px; }
+.account li.trial figure span{background-position:-263px -347px; }
+
+
+.package{ position:relative; }
+.package h3{color:#446295; font-size:1.71em; margin:0 0 0.9em 0; padding:0}
+.package ul{ padding:0 0 10em 0}
+.package li{display:inline-block; width:21.5em; height:28.2em; border:0.1em solid #d1d1d1; margin:0 0.5em 0 0; vertical-align:top}
+
+
+.package li h4{ position:relative;padding:0 1.4em; height:4.5em;line-height:5em; background:#446295; color:#fff; font-size:1.19em}
+.package li h4 strong{ padding:0 0 0 1.78em;background-image:url(../../image/vlink/icon.png); background-repeat:no-repeat}
+.package li h4 a{ position:absolute; right:15px; bottom:1.3em; border-radius:0.6em;padding:0 0.5em 0 1.6em; line-height:2em; font-size:0.9em; font-weight:100; text-decoration:none; color:#FFF;background:url(../../image/vlink/icon.png) -318px -248px no-repeat}
+.package li h4 a:hover{background:url(../../image/vlink/icon.png) -318px -248px no-repeat #38507a}
+
+
+
+
+.hourPackage dd,
+.flowPackage dd{display:inline-block; width:10.5em; height:5em; line-height:9em; margin:0 0 0 0.5em; font-size:1em; vertical-align:middle;}
+
+.hourPackage dl,
+.flowPackage dl{ padding:0 0 0 0.2em}
+
+.hourPackage span,
+.flowPackage span{ position:relative;display:inline-block; width:2.5em; height:2.5em; line-height:2.2em; margin:-0.8em 0.2em 0 0 ; vertical-align:middle; text-align:center;overflow:hidden;background:#e85757; border-radius:5em; font-size:2em;font-family: Arial, Helvetica, sans-serif;color: #FFF; }
+
+
+
+.hourPackage span i.unit,
+.flowPackage span i.unit{ position: absolute;display: block;width:5em;line-height:1em;font-size: 0.5em;letter-spacing:0.1em;bottom:0.6em;left: 0;text-align: center;font-style: normal;}
+.hourPackage span i.unit{ font-family:"Microsoft YaHei UI"}
+
+.hourPackage dd strong,
+.flowPackage dd strong{ font-size:1.8em; letter-spacing:0; font-family:Arial, Helvetica, sans-serif;}
+
+.hourPackage dd.min,
+.flowPackage dd.min{ width:8.5em; margin:0 0 0 1.3em}
+
+.festivalPackage dd{ margin:0 0 0 1.42em; line-height:1.6em; padding:2em 0 0 0 ; font-size:1.2em}
+.festivalPackage span{ float:left;position:relative;display:block; width:3.2em; height:3.2em; line-height:3.2em; margin:-0.4em 0.6em 0 0 ; vertical-align:middle; text-align:center;overflow:hidden;background:#e85757; border-radius:5em; font-size:1.3em; font-weight:bolder;color: #FFF; }
+.package li.hourPackage h4 strong{background-position:-320px -121px; }
+.package li.flowPackage h4 strong{background-position:-320px -164px; }
+.package li.festivalPackage h4 strong{background-position:-320px -210px; }
+.package li dl{height:8em; }
+.package li div.des{ height:12.3em; background:#f3f3f3; padding:1.28em; line-height:1.8em;letter-spacing:0.1em; font-size:1em;}
+.package li div.des strong.red{color:#F00; font-weight:bolder; font-size:1.2em;}
+.package footer{ position:absolute; height:7.14em; padding:2.5em 3em; background:#ededed; bottom:0;}
+
+footer h2#logo{ position:relative;width:4.6em; height:1.1em; font-weight:700; font-size:2em; padding:0.2em 0 0 2em;background:url(../../image/vlink/icon.png) -29px -612px no-repeat; color:#446295;}
+footer h2#logo i{ display:block; position:absolute; top:-0.5em; right:-2.5em; padding:0.1em 0.5em; font-style:normal; border-radius:1em; color:#fff; background:#446295;font-size:0.4em; font-weight:100;}
+footer p{ padding:0 0 0 0.5em; font-size:0.8em; margin:0;}
+footer .footNav{ position:absolute; right:7em; top:2em;}
+footer .footNav a{font-size:1em; color:#000; text-decoration:none; margin:0 0.7em 0 0;letter-spacing:0.1em}
+footer .footNav a:hover{ text-decoration:underline}
+
+
+/* 页面名称 */
+h2#pageName{ position:relative; margin:0.7em 0 0 0; padding: 0 0 0 1em; height:2.6em;font-size:2.6em; line-height:3.6em;color:#333; font-weight:100}
+h2#pageName span.tips{ font-size:0.5em; padding:0 0 0 0.71em; line-height:2.5em;}
+h2#pageName span.tips q.red{ font-size:1.35em; display:inline-block; vertical-align:middle; color:#f00}
+div.pageFrom{width:61.78em; height:auto; overflow:hidden; padding: 2.14em 0 0 2.5em; }
+div.pageFrom h3{ font-size:1.28em; padding:0 1.42em; margin:0 0 1.42em 0 ;}
+div.pageFrom h6{ font-size:1em; padding:0 1.42em; margin:-1.07em 0 1.42em 0 ; color:#777}
+div.pageFrom table{ background:#fff}
+div.pageFrom table th{ padding:1.07em 2.14em 0px 2.14em ;font-size:1.14em; line-height:2.857em; vertical-align:top;color:#333; text-align:right; letter-spacing:0.21em; }
+div.pageFrom table th span.red{ font-size:20px; display:inline-block; vertical-align:middle; color:#f00;}
+div.pageFrom table strong{ color:#f00; padding:0 0.357em;}
+div.pageFrom table td{ padding:1.071em; vertical-align:top; white-space:nowrap}
+div.pageFrom table,div.pageFrom table td,div.pageFrom table th{ border:0.1em solid #dedede; border-collapse:collapse}
+div.pageFrom table th{ background:#f8f8f8}
+div.pageFrom table { border:0}
+div.pageFrom table td input , .pageFrom table td textarea{ width:16.786em;  padding:0 0.714em;  border:0.1em solid #bdcdd1; height:2.143em;font-size:1em; line-height:2.143em;}
+div.pageFrom table td textarea{ height:6.429em; line-height:2.143em; resize:none}
+div.pageFrom table td p.formTexter{width:20em; display:inline-block; vertical-align:top; white-space:nowrap}
+div.pageFrom table td p.formTexter input{ display:inline-block}
+div.pageFrom table td p.formTexter i.unit{ display:inline-block; font-style:normal; padding:0 0 0 0.357em; font-size:0.857em; color:#333}
+div.pageFrom table td p.formTexter span.tips{display:block;margin:0.571em 0 0 0; font-size:0.857em; color:#666; white-space:normal; vertical-align:top}
+div.pageFrom table td p.validator{display:none;width:20.357em; padding:0.714em 0 0 0.357em ; margin:0 0 0 1.071em;height:1.286em;font-size:1em; line-height:1.286em;color:#f00;}
+div.pageFrom table td p.validator.warn{ display:inline-block; color:#F00}
+div.pageFrom table td label{ display:block; padding:0 0.357em;font-size:1em; line-height:2em;color:#333;}
+div.pageFrom table td .radio{ width:auto; margin:0 0.357em 0 0;display:inline-block; vertical-align:middle}
+div.pageFrom p.buttonInc{ padding:0.714em;margin:1.5em 0 0; text-align:left; text-align:center; font-family:"PingHei","Lucida Grande", "Lucida Sans Unicode", "STHeiti", "Helvetica","Arial","Verdana","sans-serif","Microsoft YaHei","MicrosoftJhengHei","STHeiti";}
+div.pageFrom p.buttonInc button{ display:inline-block ;width:16.429em;  margin:0 0 0.357em 0; border:0; overflow:hidden;font-size:1.286em; line-height:2.857em; letter-spacing:0.214em; background:#4c76cb; color:#fff; box-shadow:0.2em 0.2em 1em  #3d60a6; cursor:pointer; font-family:"PingHei","Lucida Grande", "Lucida Sans Unicode", "STHeiti", "Helvetica","Arial","Verdana","sans-serif","Microsoft YaHei","MicrosoftJhengHei","STHeiti";}
+div.pageFrom p.buttonInc button:hover {box-shadow:0 0.429em 0.714em  #3d60a6;}
+div.pageFrom p.buttonInc button:active{box-shadow:none;}
+div.pageContent{}
+div.pageFrom table input.checkNum{ width:10em;}
+div.pageFrom table button.getCheckNum{ cursor:pointer;background:#4c76cb; box-shadow:0.071em 0.071em 0.071em #3d60a6; color:#fff; border:0; border-radius:0.214em;padding:0.429em 0.714em;margin:0.714em 0; text-align:left; text-align:center; font-family:"PingHei","Lucida Grande", "Lucida Sans Unicode", "STHeiti", "Helvetica","Arial","Verdana","sans-serif","Microsoft YaHei","MicrosoftJhengHei","STHeiti";}
+div.pageFrom table button.getCheckNum:hover{box-shadow:0.071em 0.214em 0.357em  #3d60a6;}
+div.pageFrom table button.getCheckNum:active{box-shadow:0 0 0 #fff;}
+div.pageFrom table button.gray,
+div.pageFrom table button.gray:hover,
+div.pageFrom table button.gray:active{ cursor: default;background:#CCC; color:#333;box-shadow:0 0 0 #fff;}
+
+#onService{ position:fixed; z-index:50; top:50px; left:50px;width:165px; height:250px; background:url(../../image/vlink/onLineQq.png) no-repeat}
+#onService p#close{ position:absolute; top:15px; right:10px; width:26px; height:26px; overflow:hidden; }
+#onService p#close a{display:block; width:26px; height:26px; background:url(../../image/vlink/onLineQq.png) -12px -281px no-repeat}
+#onService .contents{ position:absolute; bottom:15px; left:7px; width:143px; height:55px; overflow:hidden; }
+#onService .contents p{ text-align:center; line-height:24px; font-size:14px; font-weight:bolder}
+#onService .contents p.addGroup a{ display:inline-block; padding:0 15px; border-radius:10px; color:#fff; text-decoration:none; background:#c2521e; text-align:center;}
+#onService .contents p.addGroup a:hover{ background:#8e3c16}
+.subpage .header{ background:#042b41; height:5em;}
+.subpage .header .inc{ top:1.2em;width:80em}
+/* 弹出层 */
+.artModel{ width:560px; height:150px;}
+.artModel section{font-size:14px; line-height:30px;padding:20px; letter-spacing:1px; font-family:"Microsoft Yahei",​Tahoma,​Arial;}
+.artModel h1{ font-size:28px; text-align:center; margin:-10px 0 0; color:#214f93}
+.artModel p{ padding:20px; text-align:left; margin:-10px 0 0; font-size:16px;}
+.artModel p span{ font-weight:bolder;font-size:18px;}
+.registed{ display:none}
+.registed{}
+
+#advertisement{ position:absolute; display:none; z-index:100; top:200px; left:50%;width:730px; height:440px; margin:0 0 0 -360px; background:url(../../image/vlink/theAd2.png)}
+#advertisement a.registed{ position:absolute; left:250px; top:265px; display:block;width:227px; height:57px ; background:url(../../image/vlink/theAd2.png) -13px -459px; font-size:30px; text-decoration:none; color:#000; line-height:55px;}
+#advertisement a.registed:hover{background:url(../../image/vlink/theAd2.png) -13px -516px;color:#fff;}
+#advertisement a.close{ position:absolute; right:5px; top:5px;    display: block;  width: 26px; height: 26px; background: url(../../image/vlink/theAd2.png) -264px -459px no-repeat;}
+/*  手机界面 */
+@media only screen and (max-width:767px){
+    .subpage .header .inc{ top:1.2em;width:auto}
+
+    .header nav.mobileNav{ display:block;}
+
+    body{ min-width:auto !important;}
+    #banner{ width:100%; height:100%; background:url(../../image/vlink/mobileBanner.jpg) no-repeat right 10%}
+
+    .header nav.navigation{ display:none}
+    .header nav.navigation { position:absolute; background:#042b41; top: 3em; right:1em; left:1em; width: 25em; border:0.1em solid #409438;}
+    .header nav.navigation a{ font-size:1em; color:#fff}
+    .header #logo{zoom:0.7;}
+    .header .login{ width:11em; margin:-0.2em 0.3em 0 0 }
+    .header .login .unlogin{ width:5em; margin:0 0.1em 0 0}
+    .header .login a{ line-height:2em; height:2em}
+    aside#loginArea{ right:0.5em; z-index:30;}
+
+    article{ height:auto; margin:0 0 1em 0}
+
+    article.first{height:auto;}
+    div.inc{width:96%;}
+    article.first{ margin:1em 0 0 0;}
+    article.first aside{ position:relative; width:auto; height:17em; padding:0 1em; font-size:0.8em}
+    article.second{top:2em;}
+    article.second figure,
+    article.second dl{ position:relative;}
+
+    article.third{top:0.3em;}
+    .feature dl{ width:auto;height:auto;padding:0 1em;}
+    .feature dl dt{font-size:1.3em;margin:0 0 0.4em 0}
+    .feature dl dd{line-height:1.8em;color: #000; font-size:0.6em;}
+    .feature aside .remote strong{    position: absolute;top: 10px; left: 50px; font-weight: 100;}
+
+    article.second figure,
+    article.third figure{ display:none}
+
+    .account h3,
+    .package h3{ margin:0.4em 0 0.4em 0.4em}
+    .account .inc{ }
+    .account figure{ margin:1em 0 0.2em 0}
+    .account figure span{ display:none}
+    .account figcaption{ font-size:1.4em;margin:0 0 0.6em 0; text-align:left}
+    .account li{ display:block; width:auto; height:auto; margin:0 1em}
+    .account li p{font-size:0.8em; line-height:1.6em}
+
+    .package li{ display:block;height:auto; margin:1em  auto 0 auto  }
+    .package li h4{ height:2em; line-height:2.3em}
+    .package dl{ display:none}
+    .package li div.des{height: auto;padding:0.5em;line-height: 1.6em;letter-spacing:0; font-size:0.8em}
+    .package li h4 a{ bottom:0.2em}
+
+    .package footer{ height:7em; padding:0}
+    .package footer .footNav{ left:0.5em; right:0; top:-1.5em; text-align:left}
+    .package footer .footNav a{ font-size:0.9em; margin:0 0.5em 0 0}
+    .package footer aside{ margin:2.3em 0 0 0}
+
+    .package footer h2#logo{display:none}
+
+    h2#pageName span.tips{ font-size:18px;}
+    div.pageFrom{ padding:30px 0 0 0; width:94%; margin:0 3%;}
+    div.pageFrom table{ width:100%}
+    div.pageFrom table td{ padding-left:10px;}
+    div.pageFrom table td input, .pageFrom table td textarea{ width:200px;}
+    div.pageFrom table td p.formTexter,
+    div.pageFrom table td p.validator{ width:100px; margin:0}
+    div.pageFrom table td input, .pageFrom table td textarea{ width:160px;}
+    div.pageFrom table th{ padding:15px 10px 0 10px; font-size:12px; letter-spacing:0;white-space:normal; line-height:26px;}
+    div.pageFrom p.buttonInc{ margin:0 0 0 78px }
+    div.pageFrom p.buttonInc button{ width:200px; margin:0 0 0 -70px;}
+    .aui_content aside#login .checkNum #closeCheck{ display:none}
+
+    div.pageFrom table input.checkNum{ width:9em}
+
+    #advertisement{ position:absolute; z-index:100; top:300px; left:50%;width:205px; height:270px; margin:0 0 0 -100px; background:url(../../image/vlink/theAd2.png) -347px -484px}
+    #advertisement a.registed{ position:absolute; left:20px; top:160px; display:block;width:155px; height:39px ; background:url(../../image/vlink/theAd2.png) -13px -614px; font-size:21px; text-decoration:none; color:#000; line-height:39px;}
+    #advertisement a.registed:hover{background:url(../../image/vlink/theAd2.png) -13px -653px;color:#fff;}
+    #advertisement a.close{  right:-7px; top:-7px; }
+
+}
+@media only screen and (max-width:340px){
+    #banner{ background-size:120%}
+    .header nav.mobileNav{ top:3.1em; right:1em}
+    .feature aside p{ clear:both;display:block; height:auto; padding:5px 0 0 0; margin:0!important;}
+    .feature aside .icon{ zoom:0.8; margin:0 5px 0 0 !important; float:left;  }
+    .feature aside strong{position:relative !important; left:0 !important; top:0; !important;}
+    div.inc{width:100%;}
+    article.first{ height:15em}
+    article.first aside{ display:none}
+    article.second { margin:2em 0 0 0}
+    #advertisement{ position:absolute; z-index:100; top:100px;}
+}
