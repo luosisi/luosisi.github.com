@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        /*可以的话不要写css reset
+        body, dl, dd, h1, h2, h3, h4, h5, h6, p, form{margin:0;}
+        ol,ul,input,textarea,td,th{margin:0; padding:0;}
+        */
+
+        .zheng{
+            -wwbkit-perspective:800;
+            -webkit-perspective-origin: 50% 50%;
+            -webkit-transform-style:-webkit-preserve-3d;
+        }
+        .wuti{
+            background: #2e2e2e;color: #fff;font-size: 30px;text-align: center;width: 150px;height: 150px;
+            position: absolute;left: 40%;top:40%;
+
+        }
+
+        .wuti:hover{
+            -webkit-transform-origin: bottom;
+            -webkit-transform:rotateX(90deg);
+            -webkit-transition: all 3s;
+        }
+        #div2,#div3{-webkit-transform:rotateX(-90deg);}
+        .xiala-ul{display: none;}
+        .animation_img{-webkit-perspective:600px;-webkit-transform-style:preserve-3d;-webkit-animation: img_rolate 5s infinite, img_rolateZ 5s infinite;}
+        @-webkit-keyframes img_rolate {
+           0%{-webkit-transform: rotateY(0deg);}
+           50%{-webkit-transform: rotateY(180deg);}
+           100%{-webkit-transform: rotateY(360deg);}
+        }
+          @-webkit-keyframes img_rolateZ {
+             0%{-webkit-transform: rotateZ(0deg);}
+             50%{-webkit-transform: rotateZ(180deg);}
+             100%{-webkit-transform: rotateZ(360deg);}
+          }
+        #clock{display: inline-block;width: 100px;height: 50px;text-align: center;border: 1px solid red;}
+
+        .MM{width: 500px;height: 300px;position: relative;}
+        .MM img{position: absolute;border: 1px solid #d6d6d6;}
+        .MM img:hover{z-index: 999; -webkit-transform: rotateZ(0deg);-webkit-perspective: 600px;-webkit-transform-style: preserve-3d;-webkit-box-shadow: 15px 15px 5px #d6d6d6;transition: all ease-in-out 0.5s;}
+        .mm12{width: 100px;left: 20px;
+            -webkit-transform: rotateZ(10deg);
+            -moz-transform: rotateZ(10deg);
+            -ms-transform:rotateZ(10deg) ;
+            -o-transform: rotateZ(10deg);
+            transform: rotateZ(10deg);
+        -webkit-box-shadow: 5px 5px 5px #d6d6d6;}
+        .mm8{width: 150px;left: 155px; -webkit-transform: rotateZ(-10deg);-webkit-box-shadow: 5px 5px 5px #d6d6d6;}
+        .mm9{width: 160px;left: 290px; -webkit-transform: rotateZ(10deg);-webkit-box-shadow: 5px 5px 5px #d6d6d6;}
+        .text-h3{position: relative;text-align:center;line-height: 30px;}
+        .text-span{position: absolute;display:block;width: 100%;height: 30px;background: #0089FF;
+            /*opacity兼容*/opacity: 0.5;filter: alpha(opacity=50);-webkit-opacity: 0.5;;-moz-opacity: 0.5;-khtml-opacity:0.5; -ms-opacity:0.5;
+            background: -webkit-linear-gradient(top ,#0089FF,rgba(255,255,255,0.1));
+        }
+        .opacity{opacity: 0.5;filter: alpha(opacity=50);-webkit-opacity: 0.5;;-moz-opacity: 0.5;-khtml-opacity:0.5; -ms-opacity:0.5;
+        }
+
+        .qipao1,.qipao2,.qipao3{width: 300px;height: 200px;display:inline-block;line-height:200px;text-align:center;margin-left: 50px;position: relative;}
+        .qipao1,.qipao3{background: #0089FF;}
+        .qipao3{border-radius: 99px;}
+        .qipao2{border: 3px solid #0089FF;color: #0089FF;}
+        .qipao1 span,.qipao2 span{display: inline-block;position: absolute;width: 0 ;height: 0;border-style: solid;}
+        .adot1{border-width: 20px;border-color: #ffffff #0089FF #0089FF #ffffff;left: -40px;top:130px;}
+        .adot2{border-width: 10px 20px;border-color:transparent #ffffff #ffffff transparent;left: -40px;top:150px;}
+        .bdot1{border-width: 18px;border-color: #0089FF  #ffffff  #ffffff #ffffff;left: 55px;top:203px;}
+        .bdot2{border-width: 16px;border-color: #ffffff transparent transparent transparent;left:57px;top:200px;}
+        .cdot1,.cdot2{display: inline-block;position: absolute;}
+        .cdot1{width: 35px;height: 35px;border-radius: 0 0 99px 0;background: #0089FF;left: 0px;top:150px;/*-webkit-transform: rotateZ(10deg)*/}
+        .cdot2{width: 20px;height: 35px;border-radius: 0 0 99px 0;background: #ffffff;left: -7px;top:150px;/*-webkit-transform: rotateZ(10deg)*/}
+        .mylocation,.myhistory{margin: 50px;}
+        .myzhezhao{position: fixed;width: 100%;height: 100%;top:0;left: 0;background: #222;}
+        .tanchucont,#tuozhuaibox{width: 500px;height: 300px;text-align: center;padding-top: 20px;position: absolute;left:1000px;top:500px;margin:-150px -250px;background: #fff;z-index: 99;}
+        .tuozhuai{background: #0089FF;height:50px;line-height: 50px;cursor: move;}
+        .jianbian{width: 500px;height: 200px;background: -webkit-linear-gradient(left,blue , white 70%, orange );}
+
+        .wrap{ margin:50px auto; width:1000px;}
+
+        .wrap .button{ width:100px; height:100px; text-align:center; font-size:50px; text-transform:uppercase; font-family:Arial; color:#fff; -webkit-border-radius:50px; border:1px solid #7b0e25;
+            background:#ca0500 -webkit-gradient(radial,60 60,60,50 120,0,from(#ca0500),to(rgba(255,255,255,0.6))); position:relative; text-shadow:0px 0px 3px rgba(94,49,44,0.9); -webkit-box-reflect:below 1px -webkit-gradient(linear,left top,left bottom,from(transparent),color-stop(60%,transparent),color-stop(80%,rgba(255,255,255,0.2)),to(rgba(255,255,255,0.5)));}
+        .wrap .button:hover{ cursor:pointer; -webkit-transform: scale(2); -webkit-transition:-webkit-transform 2s ease-in;}
+        .wrap .button i{ font-style:normal; display:block; margin-top:18px;}
+        .wrap .button .highlight{ display:block; height:100px; width:100px; position:absolute; left:0px; top:0px; -webkit-border-radius:50px;background:-webkit-gradient(linear,left top,45%bottom,from(rgba(255,255,255,0.7)),color-stop(0.55,rgba(255,255,255,0.2)),color-stop(0.55,rgba(255,255,255,0))); }
+
+        .contenttest:before{
+            content: "ol,ul标签应用counter-reset属性，li标签应用counter-increment属性，值均为sectioncounter，再配合content属性，以及counter计数器就可以实现递增的效果了.设置了display:none就不会递增了";}
+        .contenttest{counter-reset: sectioncounter;}
+        .contenttest li:before{content: "我是测试content" counter(sectioncounter) "--";counter-increment: sectioncounter;}
+        .contenttest li{margin-top: 10px;}
+
+        textarea{resize: none;width: 300px;height: 100px;}
+        .show{display:inline-block;width: 300px;height: 100px;}
+
+        .sundiv{height: 500px;width: 500px;display:inline-block;background: #042b41;}
+        .sunul{position: relative;}
+        .sunul li{border: 1px solid #d6d6d6;border-radius: 999px;position: absolute;list-style: none;background:#042b41;
+        -webkit-animation-name: xuanzhuan;}
+        .sunul li,.sunul li.erath span{-webkit-animation-timing-function:linear;-webkit-animation-iteration-count:infinite;}
+        .sunul li span{width: 12px;height: 12px;border-radius: 15px;position: absolute; }
+        .sunul .sun{width: 40px;height: 40px;z-index: 100;top:236px;right: 236px;background: -webkit-radial-gradient(circle,yellow,#A0A000);
+            box-shadow:0px 0px 30px #A0A000}
+        .shuixing{width: 80px;height: 80px;top:218px;right: 218px;z-index: 99;overflow: hidden;-webkit-animation-duration: 4S;}
+        .jinxing{width: 120px;height: 120px;top:200px;right: 200px;z-index: 98;overflow: hidden;-webkit-animation-duration: 8S;}
+        .erath{width: 160px;height: 160px;top:182px;right: 182px;z-index: 97;overflow: hidden;-webkit-animation-duration: 12S;}
+        .huoxing{width: 200px;height: 200px;top:164px;right: 164px;z-index: 96;overflow: hidden;-webkit-animation-duration: 18S;}
+        .dinlinebk{display: inline-block;}
+        .qiu1{position: absolute;background:#00A000;top:15px; }
+        .qiu2{position: absolute;background:#bbbbbb;top:8px;right: 17px; }
+        .qiu3{position: absolute;background:#219161;top:45px;right:0; }
+        .qiu4{position: absolute;background:#1cc4da;top:-5px;right: 90px; }
+        .sunul li.erath span{-webkit-animation-name: moonxz;-webkit-animation-duration: 2S;}
+        .sunul li.erath .moon{width: 5px;height: 5px;background: #fff;top:15px;}
+        @-webkit-keyframes xuanzhuan {
+            0%{ -webkit-transform:rotate(0deg)}
+            100%{-webkit-transform: rotate(360deg);}
+        }
+        @-webkit-keyframes moonxz {
+            0%{ -webkit-transform:rotate(0deg)}
+            100%{-webkit-transform: rotate(360deg);}
+        }
+
+        .emailcomplete{width: 350px;height: 350px;display: inline-block;}
+        .emailinput{height: 35px;line-height: 35px;padding: 5px;display: block;}
+        .emaillist,.emaillistT{list-style: none;border: 1px solid #d6d6d6;margin: 0;width: 180px;padding: 0;}
+        .emaillist li,.emaillistT li{height: 30px;line-height: 30px;padding-left: 20px;width:160px;}
+        .emaillist li:hover,.emaillistT li:hover{background: #d6d6d6;}
+        .Dnone{display: none;}
+        .Ddinlinebk{display: inline-block;}
+        .clickafter{width: 182px;height: 30px;line-height: 30px;padding-left: 15px;}
+
+        .svgtest{fill:red;}
+
+        .jindu{position: relative;width:300px;height: 100px;}
+        .jindu,.jindu span{display: inline-block;}
+        .jindubai,.jindugreen{height: 20px;border-radius: 15px;position: absolute;}
+        .jindubai{width:300px;border: 1px solid #d6d6d6; top: 8px;}
+        .jindugreen{background: #00A000;width:20px;}
+        .btn{width: 40px;height: 40px;background: #A0A000;position: absolute;border-radius: 50px;left: 0;}
+        .btn:hover{cursor: pointer;}
+
+        .choujiang{display: inline-block;width: 506px;height: 406px;border: 1px solid #d6d6d6;position: relative;}
+        ul,li{margin: 0;padding: 0;position: absolute;}
+        .choujiangul .cj_choosed{border: 3px solid red;}
+        .choujiangul li{width: 100px;height: 100px;border: 2px solid #bbbbbb;list-style: none;margin: -2px -4px;}
+        .cj_btn{width: 306px;height: 204px;margin:100px;text-align: center;line-height: 204px;background: #A0A000;color: #fff;font-size: 26px;}
+        #random_1{left: 0;top:0;}
+        #random_2{left: 102px;top:0;}
+        #random_3{left: 204px;top:0;}
+        #random_4{left: 306px;top:0;}
+        #random_5{left: 408px;top:0;}
+        #random_6{left: 408px;top:102px;}
+        #random_7{left: 408px;top:204px;}
+        #random_8{left: 408px;top:306px;}
+        #random_9{left: 306px;top:306px;}
+        #random_10{left: 204px;top:306px;}
+        #random_11{left: 102px;top:306px;}
+        #random_12{left: 0;top:306px;}
+        #random_13{left: 0;top:204px;}
+        #random_14{left: 0;top:102px;}
+
+        #showhjpeople{width: 200px;height: 30px;line-height: 30px;}
+
+        .vote{display: inline-block;width: 400px;height: 200px;}
+        .vote div{height: 50px;display: inline-block;}
+        .vote_cont{width: 400px}
+        .vote1{width: 280px;background: #00A000;}
+        .vote2{width: 120px;background: #A0A000;}
+
+        .jisuanqi{display: inline-block;}
+        .myinput{ width:70px; height:30px;}
+        .tf{ width:220px; height:30px; margin-bottom:5px; font-size:26px; font-family:Tahoma, Geneva, sans-serif; color:#fff; border:2px solid #999; background:#000; text-align:right;}
+
+        .phone{position: relative;display: inline-block;border: 1px solid #d6d6d6;width: 300px;height: 40px;}
+        .phone_btn{position: absolute;display: inline-block;width: 50px;height: 35px;top:4px;background:url(http://js.alixixi.com/img/201108/btn.jpg) no-repeat;background-size: 100%;}
+        .phone_btn:hover{cursor: pointer;}
+
+        .password{display:inline-block;vertical-align: middle;margin-top: -30px;}
+        .pwd_input{width: 200px;height:30px;line-height: 30px;}
+        .password span{margin: 0 5px;}
+        .red{color: red;}
+    </style>
+
+</head>
+<body>
+    <!--全选取消全选-->
+    <input type="checkbox" name="test"/>1
+    <input type="checkbox" name="test"/>2
+    <input type="checkbox" name="test" />3
+    <input type="checkbox" name="test" />4
+    <input type="checkbox" name="test" />5
+    <input type="checkbox" id="chooseall" onclick="selectAll()"/>全选
+    <!--css3文字达到图片效果-->
+    <h3 class="text-h3"><span class="text-span"></span>css3文字达到图片效果</h3>
+    <!-- jquery的下拉，slideToggle-->
+    <div class="xiala-top" id="daohangtop"><a href="">垂直导航</a></div>
+    <ul class="xiala-ul" id="xialaul">
+        <li><a href="" class="xiala-a">1</a> </li>
+        <li><a href="" class="xiala-a">1</a> </li>
+        <li><a href="" class="xiala-a">1</a> </li>
+        <li><a href="" class="xiala-a">1</a> </li>
+        <li><a href="" class="xiala-a">1</a> </li>
+        <li><a href="" class="xiala-a">1</a> </li>
+    </ul>
+    <div>
+    </div>
+    <!--时间-->
+    <span id="clock" ></span>
+    <div class="animation_img" style="width: 300px;height: 200px;" ><img src="images/lunbo.png" style="width: 300px;height: 200px;"></div>
+    <!--css3做的相册-->
+    <div class="MM">
+        <img src="images/mm12.jpg" class="mm12"/>
+        <img src="images/mm8.jpg" class="mm8"/>
+        <img src="images/mm9.jpg" class="mm9"/>
+    </div>
+    <!--css3的气泡，非图片-->
+    <div class="qipao1">
+        <span class="adot1"></span>
+        <span class="adot2"></span>
+        css3的气泡，非图片
+    </div>
+    <div class="qipao2">
+        <span class="bdot1"></span>
+        <span class="bdot2"></span>
+        css3的气泡，非图片,采取特殊字符如 ◆
+    </div>
+    <div class="qipao3">
+        <span class="cdot1"></span>
+        <span class="cdot2"></span>
+        css3的气泡，非图片
+    </div>
+    <!--location的测试-->
+    <div class="mylocation" id="mylocation">
+        <input type="button" value="location.replace(这个浏览器不能将文档返回到原来的文档)">
+        <input type="button" value="location.assgin">
+        <input type="button" value="location=">
+        <input type="button" value="location返回顶部#top特殊的例子，没有id为top的才可以">
+    </div>
+    <!--history的测试-->
+    <div class="myhistory">
+        <input type="button" id="forward" value="前进forward">
+        <input type="button" id="back" value="后退back">
+    </div>
+    <!--弹出框测试-->
+    <div>
+        <input type="button" id="mytanchubox" value="简易弹出,里面可以拖拽，待优化">
+    </div>
+    <div class="myzhezhao opacity" id="myzhezhao" style="display: none;" ></div>
+    <div class="tanchucont" id="tuozhuaibox" style="display: none;">
+        <div class="tuozhuai" id="tuozhuaibar">拖拽</div>
+        弹出咯！
+    </div>
+    <!--判断input radio是否选中-->
+    <input type="radio" name="weizhi" value="左"/>左
+    <input type="radio" name="weizhi" value="中"/>中
+    <input type="radio" name="weizhi" value="右"/>右
+
+    <!--渐变测试-->
+    <div class="jianbian"></div>
+
+    <div class="wrap">
+        <div class="button"><span class="highlight"></span><i>m</i></div>
+    </div>
+    <!--content测试-->
+    <ul class="contenttest">
+        <li>content测试</li>
+        <li>content测试</li>
+        <li>content测试</li>
+    </ul>
+    <!--js自动检测地址-->
+    <textarea id="mytext">你现在可以点击访问这里，不是纯文本的链接！https://luosisi.github.io/index.html</textarea>
+    <input type="button" id="mybtn" value="发布">
+    <div class="show" id="show"></div>
+
+    <!--太阳系-->
+    <div class="sundiv">
+        <ul class="sunul">
+            <li class="sun"></li>
+            <li class="shuixing">
+                <span class="qiu1 dinlinebk"></span>
+            </li>
+            <li class="jinxing">
+                <span class="qiu2 dinlinebk"></span>
+            </li>
+            <li class="erath">
+                <span class="qiu3 dinlinebk">
+                    <span class="moon dinlinebk"></span>
+                </span>
+
+            </li>
+            <li class="huoxing">
+                <span class="qiu4 dinlinebk"></span>
+            </li>
+        </ul>
+    </div>
+
+   <!-- <div class="emailcomplete">
+        <input class="emailinput" id="emailin" autofocus="autofocus" value="" >
+        <ul class="emaillist" style="display: none;">
+            <li><span></span><span>@qq.com</span></li>
+            <li><span></span><span>@123.com</span></li>
+            <li><span></span><span>@126.com</span></li>
+            <li><span></span><span>@gmail.com</span></li>
+            <li><span></span><span>@sina.com</span></li>
+            <li><span></span><span>@yahoo.com</span></li>
+            <li class="Dnone clickafter "></li>
+        </ul>
+    </div>-->
+
+    <svg class="svgtest">
+        <defs>
+            <g id="shape">
+                <rect height="20" width="20" x="0" y="0"></rect>
+                <circle r="20" cx="0" cy="0"></circle>
+            </g>
+        </defs>
+        <use xlink:href="#shape" x="50" y="50">
+
+        </use>
+    </svg>
+    <!--拖动进度显示百分比-->
+    <div class="jindu">
+        <span class="jindubai">
+            <span class="jindugreen"></span>
+        </span>
+
+        <span class="btn"></span>
+        <p style="margin-top: 45px;">当前进度：<span class="jindupercent"></span></p>
+    </div>
+    <!--跑马灯抽奖-->
+    <div class="choujiang">
+        <ul class="choujiangul">
+            <li id="random_1">1</li>
+            <li id="random_2">2<li>
+            <li id="random_3">3</li>
+            <li id="random_4">4</li>
+            <li id="random_5">5</li>
+            <li id="random_6">6</li>
+            <li id="random_7">7</li>
+            <li id="random_8">8</li>
+            <li id="random_9">9</li>
+            <li id="random_10">10</li>
+            <li id="random_11">11</li>
+            <li id="random_12">12</li>
+            <li id="random_13">13</li>
+            <li id="random_14">14</li>
+        </ul>
+        <p class="cj_btn" onclick="choujiang()">抽奖</p>
+    </div>
+    <!--抽奖-->
+    <div class="choujiang2">
+        <p id="zhuan">开始抽奖</p>
+        <p > <input type="button" onclick="star()" value="开始">
+             <input type="button" onclick="stop()" value="停止">
+            <input type="text" id="showhjpeople">
+        </p>
+
+    </div>
+    <!--投票百分比-->
+    <div class="vote" id="vote">
+        <div class="vote_cont">
+            <div class="vote1" id="vote1_div" >70%</div><div class="vote2" id="vote2_div">30%</div>
+
+            <input type="button" id="vote1" value="投票1">
+            <input type="button" id="vote2" value="投票2">
+        </div>
+    </div>
+    <!--模拟计算器-->
+    <div class="jisuanqi">
+        <input class="tf" name="textfield" type="text" id="tf" size="30" />
+        <br />
+        <input class="myinput" type="submit" name="button" id="btn0" value="0" />
+        <input class="myinput" type="submit" name="button" id="btn1" value="1" />
+        <input class="myinput" type="submit" name="button" id="btn2" value="2" />
+        <br />
+        <input class="myinput" type="submit" name="button" id="btn3" value="3" />
+        <input class="myinput" type="submit" name="button" id="btn4" value="4" />
+        <input class="myinput" type="submit" name="button" id="btn5" value="5" />
+        <br />
+        <input class="myinput" type="submit" name="button" id="btn6" value="6" />
+        <input class="myinput" type="submit" name="button" id="btn7" value="7" />
+        <input class="myinput" type="submit" name="button" id="btn8" value="8" />
+        <br />
+        <input class="myinput" type="submit" name="button" id="btn9" value="9" />
+        <input class="myinput" type="submit" name="button" id="btn10" value="." />
+        <input class="myinput" type="submit" name="button" id="jisuanback" value="退格" />
+    </div>
+    <!--滑动解锁-->
+    <div class="phone" id="phonebox">
+        <span class="phone_btn" id="phone_btn"></span>
+    </div>
+    <!--密码强度检测-->
+    <div class="password" id="password">
+        <input type="password" class="pwd_input" id="pwdinput" maxlength="16" placeholder="密码强度检测">
+        <span class="">低</span>
+        <span class="">中</span>
+        <span class="">高</span>
+        <span class="">很好</span>
+    </div>
+    <script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/myprac.js"></script>
+
+</body>
+</html>

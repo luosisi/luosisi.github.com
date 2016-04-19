@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .gray-img{
+            -webkit-filter:grayscale(0.1);
+            filter:scale(0.9);
+            filter:grayscale(0.9);
+        }
+        .shadow-img{box-shadow: 5px 5px 5px 5px #d6d6d6;}
+        img{-webkit-box-reflect: below 0px -webkit-gradient(linear,left top,left bottom,from(transparent),color-stop(30%,transparent),to(#ffffff));}
+        .jianbian{height:200px;width:200px; background: -webkit-radial-gradient(red 35%,green 8% ,yellow 20% );border: 1px solid #222;margin-left: 35%;}
+    </style>
+    <script type="text/javascript" src="../js/jquery-1.2.6.pack.js"></script>
+    <script type="text/javascript" src="../js/content_zoom.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('#myimg-zoom').fancyZoom({scaleImg: true, closeOnClick: true});
+            $('#zoom_word_1').fancyZoom({width:400, height:200});
+            $('#zoom_word_2').fancyZoom();
+            $('#zoom_flash').fancyZoom();
+        });
+
+    </script>
+</head>
+<body>
+<img src="images/0.png" class="gray-img" alt="" style="width: 200px;height: 100px;"/>
+<!--图片的阴影-->
+    <a href="">
+        <img src="images/lunbo.png" id="myimg-zoom"  class="shadow-img" style="width: 350px;height: 220px;" />
+    </a>
+    <div id="myimg" style="display: none;border: 1px solid #d6d6d6;padding: 5px;"></div>
+    <div class="jianbian">dsfgsdf</div>
+
+
+</body>
+</html>

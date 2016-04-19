@@ -1,0 +1,39 @@
+<title>ÍøÒ³Loading</title>
+<body onLoad="location.href = url;" style='overflow:hidden;overflow-y:hidden'>
+<style>
+    .loading span{display: inline-block;width: 10px;height: 10px;background: #1cc4da;}
+    .loading span.loadingspan{background: #0089FF;}
+</style>
+
+<div align=center>
+    ¼ÓÔØÖĞ£¬Äª¼±
+    <div class="loading" id="loading">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+</div>
+<script language="JavaScript">
+    var url = 'http://localhost:63342/WebStorm-10.ha/practice/asd.html';
+    var loading=document.getElementById("loading"),spanlist=loading.getElementsByTagName("span");
+    var i=0;
+    function addloading(){
+
+        spanlist[i].className="loadingspan";
+        if(i>0)
+        {spanlist[i-1].className="";console.log("..."+i)}
+        else{
+            spanlist[spanlist.length-1].className="";
+            console.log("-----"+i)
+        }
+        i++;
+        console.log("-----"+i)
+        if(i>3){i=0}
+    }
+    var Timer=setInterval('addloading()',10);
+
+
+</script>
+</body>
