@@ -1,4 +1,4 @@
-﻿
+
 var chooseall=document.getElementById("chooseall"),
 	mytest=document.getElementsByName("test"),
 	leng=mytest.length;
@@ -282,6 +282,92 @@ function doMove (iTarget, onEnd)
 				break;
 		}
 	}
+
+function _fresh() {
+	var endtime = new Date("2016/6/30,9:00:00");
+	var nowtime = new Date();
+	var leftsecond = parseInt((endtime.getTime()-nowtime.getTime())/1000);
+	__d = parseInt(leftsecond / 3600 / 24);
+	__h = parseInt((leftsecond / 3600) % 24);
+	__m = parseInt((leftsecond / 60) % 60);
+	__s = parseInt(leftsecond % 60);
+	document.getElementById("times").innerHTML = "" + __d + "天" + "" + __h + "" + "小时" + "" + __m + "" + "分" + "" + __s + "" + "秒";
+	if (leftsecond <= 0) {
+		document.getElementById("times").innerHTML = "抢购已结束";
+		clearInterval(sh);
+	}
+}
+_fresh()
+var sh;
+sh = setInterval(_fresh, 1000);
+/*环形进度条*/
+/*var jinDunum= 0,jinDutimer,Rightdeg,Leftdeg;;
+
+function jinduAdd(){
+	/!*console.log("=="+Rightdeg)*!/
+	if(jinDunum<31){
+		Rightdeg=-44.5+jinDunum*3;
+		getId("circleRight2").style.webkitTransform="rotate(("+Rightdeg+")deg)"
+
+	}else{
+	Leftdeg=-45.5+(jinDunum-30)*3;
+		getId("circleLeft2").style.webkitTransform="rotate(("+Leftdeg+")deg)"
+	}
+	jinDunum++;
+	if(jinDunum>60){
+		jinDunum=0;
+	}
+}
+jinDutimer=setInterval(jinduAdd,1000);*/
+
+var jinDunum= 1,jinDutimer,Rightdeg=-44.5,Leftdeg=-45.5;
+function getId(id){return document.getElementById(id);}
+var mycircleRight2=getId("circleRight2"),mycircleLeft2=getId("circleLeft2");
+jinDutimer=setInterval(jinduAdd,1000);
+function jinduAdd(){
+	if(jinDunum<31){
+		Rightdeg=-44.5+jinDunum*6;
+		mycircleRight2.style.webkitTransform="rotate("+Rightdeg+"deg)"
+		console.log("=="+Rightdeg+"==="+jinDunum+mycircleRight2.innerHTML)
+
+	}else{
+		Leftdeg=-45.5+(jinDunum-30)*6;
+		mycircleLeft2.style.webkitTransform="rotate("+Leftdeg+"deg)"
+		console.log("--"+Rightdeg+"---"+jinDunum)
+	}
+	getId("circleJindutext").innerHTML=jinDunum;
+
+	jinDunum++;
+	if(jinDunum>60){
+		jinDunum=1;
+		mycircleRight2.style.webkitTransform="rotate(-44.5deg)"
+		mycircleLeft2.style.webkitTransform="rotate(-45.5deg)"
+	}
+}
+
+/*
+var jinDunum= 0,jinDutimer,Rightdeg=0,Leftdeg=-45.5;
+function huanAdd(){
+	console.log(jinDunum)
+	if(jinDunum<31){
+		Rightdeg=-44.5+jinDunum*6;
+		console.log("=="+Rightdeg)
+
+	}else{
+		Leftdeg=-45.5+(jinDunum-30)*6;
+		console.log("--"+Leftdeg)
+
+	}
+	$("#jinduRight").html("<div class='circleRight2' id='circleRight2' style='transform:rotate("+Rightdeg+"deg);'></div>");
+	$("#jinduLeft").html("<div class='circleLeft2' id='circleLeft2' style='transform:rotate("+Leftdeg+"deg);'></div>")
+
+	jinDunum++;
+	if(jinDunum>60){
+		jinDunum=0;
+		Rightdeg=0,Leftdeg=-45.5;
+	}
+}
+jinDutimer=setInterval('huanAdd()',1000);*/
 /*jquery区域*/
 $(function(){
 	$(".xiala-top").click(function(){
