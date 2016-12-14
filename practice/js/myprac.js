@@ -1,4 +1,4 @@
-
+     
 var chooseall=document.getElementById("chooseall"),
 	mytest=document.getElementsByName("test"),
 	leng=mytest.length;
@@ -284,7 +284,7 @@ function doMove (iTarget, onEnd)
 	}
 
 function _fresh() {
-	var endtime = new Date("2016/6/30,9:00:00");
+	var endtime = new Date("2016/12/30,9:00:00");
 	var nowtime = new Date();
 	var leftsecond = parseInt((endtime.getTime()-nowtime.getTime())/1000);
 	__d = parseInt(leftsecond / 3600 / 24);
